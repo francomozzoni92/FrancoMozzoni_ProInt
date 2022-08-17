@@ -19,11 +19,11 @@ div{
 @media (max-width: 575px){
     #fotodeperfil{
         position: absolute;
-        width: 30%;
+        width: 36%;
         border-radius: 100%;
         box-shadow: 2px 2px 2px gray;
         left: 33%;
-        top: 950px;
+        top: 767px;
     }
 }
 
