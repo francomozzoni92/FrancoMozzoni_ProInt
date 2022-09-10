@@ -2,6 +2,6 @@
 package com.portfolio.framozz.Security.Enums;
 
 
-public enums RolNombre {
+public enum RolNombre {
     ROLE_ADMIN, ROLE_USER
 }
