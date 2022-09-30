@@ -1,5 +1,5 @@
 
-package com.portfolio.framozz.Security.Dto;
+package com.portfolio.framozz.Dto;
 
 import javax.validation.constraints.NotBlank;
 

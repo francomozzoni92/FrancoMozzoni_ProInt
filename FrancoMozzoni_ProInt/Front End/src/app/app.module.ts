@@ -23,6 +23,8 @@ import { EditExperienciaComponent } from './components/experiencia/edit-experien
 import { NeweducacionComponent } from './components/educacion/neweducacion.component';
 import { EditeducacionComponent } from './components/educacion/editeducacion.component';
 import { RouterModule } from '@angular/router';
+import { EditSkillComponent } from './components/hys/edit-skill.component';
+import { NewSkillComponent } from './components/hys/new-skill.component';
 
 
 
@@ -45,7 +47,9 @@ import { RouterModule } from '@angular/router';
     NewExperienciaComponent,
     EditExperienciaComponent,
     NeweducacionComponent,
-    EditeducacionComponent
+    EditeducacionComponent,
+    EditSkillComponent,
+    NewSkillComponent
   ],
   imports: [
     BrowserModule,

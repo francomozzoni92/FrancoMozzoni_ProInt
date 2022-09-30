@@ -1,7 +1,8 @@
 
-package com.portfolio.framozz.Security.Controller;
+package com.portfolio.framozz.controller;
 
-import com.portfolio.framozz.Security.Dto.dtoEducacion;
+import com.portfolio.framozz.Dto.dtoEducacion;
+import com.portfolio.framozz.Security.Controller.Mensaje;
 import com.portfolio.framozz.Security.Entity.Educacion;
 import com.portfolio.framozz.service.SEducacion;
 import java.util.List;

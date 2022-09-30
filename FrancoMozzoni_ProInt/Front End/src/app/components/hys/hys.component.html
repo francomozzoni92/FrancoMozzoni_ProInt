@@ -1,26 +1,19 @@
 <div class="row">
+  
     <h1>Hard & Soft Skills</h1>
-<div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-    [percent]="85"
-    [radius]="100"
-    [showUnits]="false"
-    [title]="'HTML'"
-    [showSubtitle]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="8"
-    [outerStrokeColor]="'blue'"
-    [innerStrokeColor]="'lightblue'"
-    [animation]="true"
-    [animationDuration]="600"
-  ></circle-progress>
+<div class="col-xs-2 col-sm-2 col-md-2- col-lg-2">
+  <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Nueva Skill</button>
 </div>
-<div class="text-center col-sm-4 col-md-4 col-lg-4">
+     
+
+<div class="text-center col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let skill of skill">
     <circle-progress
-    [percent]="85"
+    [percent]="(skill.porcentaje)"
     [radius]="100"
     [showUnits]="false"
-    [title]="'CSS'"
+    [title]="(skill.nombre)"
+    [titleColor]="'#000080'"
+    [showTitle]="true"
     [showSubtitle]="false"
     [outerStrokeWidth]="16"
     [innerStrokeWidth]="8"
@@ -29,65 +22,9 @@
     [animation]="true"
     [animationDuration]="600"
   ></circle-progress>
+<div>
+  <td *ngIf="isLogged"><button class="btn btn-info" routerLink="/editskill/{{skill.id}}"><i class="bi bi-magic"></i></button></td>
+                    <td *ngIf="isLogged"><button class="btn btn-danger" (click)="delete(skill.id)"><i class="bi bi-trash3-fill"></i></button></td>
 </div>
-<div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-    [percent]="90"
-    [radius]="100"
-    [showUnits]="false"
-    [title]="'JS'"
-    [showSubtitle]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="8"
-    [outerStrokeColor]="'blue'"
-    [innerStrokeColor]="'lightblue'"
-    [animation]="true"
-    [animationDuration]="600"
-  ></circle-progress>
-</div>
-<div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-    [percent]="85"
-    [radius]="100"
-    [showUnits]="false"
-    [title]="'GitHub'"
-    [showSubtitle]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="8"
-    [outerStrokeColor]="'blue'"
-    [innerStrokeColor]="'lightblue'"
-    [animation]="true"
-    [animationDuration]="600"
-  ></circle-progress>
-</div>
-<div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-    [percent]="50"
-    [radius]="100"
-    [showUnits]="false"
-    [title]="'English'"
-    [showSubtitle]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="8"
-    [outerStrokeColor]="'blue'"
-    [innerStrokeColor]="'lightblue'"
-    [animation]="true"
-    [animationDuration]="600"
-  ></circle-progress>
-</div>
-<div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-    [percent]="100"
-    [radius]="100"
-    [showUnits]="false"
-    [title]="'TeamWork'"
-    [showSubtitle]="false"
-    [outerStrokeWidth]="16"
-    [innerStrokeWidth]="8"
-    [outerStrokeColor]="'blue'"
-    [innerStrokeColor]="'lightblue'"
-    [animation]="true"
-    [animationDuration]="600"
-  ></circle-progress>
 </div>
 </div>

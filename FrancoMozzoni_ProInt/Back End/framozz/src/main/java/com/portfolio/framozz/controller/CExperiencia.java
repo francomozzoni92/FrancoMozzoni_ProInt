@@ -1,7 +1,9 @@
 
-package com.portfolio.framozz.Security.Controller;
+package com.portfolio.framozz.controller;
 
 import com.portfolio.framozz.Dto.dtoExperiencia;
+import com.portfolio.framozz.Security.Controller.Mensaje;
+import com.portfolio.framozz.Security.Entity.Educacion;
 import com.portfolio.framozz.Security.Service.SExperiencia;
 import com.portfolio.framozz.entity.Experiencia;
 import java.util.List;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -30,6 +33,15 @@ public class CExperiencia {
     public ResponseEntity<List<Experiencia>> list(){
         List<Experiencia> list = sExperiencia.list();
         return new ResponseEntity(list, HttpStatus.OK);
+    }
+    
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<Experiencia> getById(@PathVariable("id")int id){
+        if(!sExperiencia.existsById(id)){
+            return new ResponseEntity(new Mensaje("No existe el id"), HttpStatus.BAD_REQUEST);
+        }
+        Experiencia experiencia = sExperiencia.getOne(id).get();
+        return new ResponseEntity(experiencia, HttpStatus.OK);
     }
     
     @PostMapping("/create")
@@ -62,6 +74,7 @@ public class CExperiencia {
         return new ResponseEntity(new Mensaje("Experiencia actualizada"), HttpStatus.OK);
     }  
     
+        @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id){
         if(!sExperiencia.existsById(id))
             return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
